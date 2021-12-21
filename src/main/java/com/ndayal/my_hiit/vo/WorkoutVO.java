@@ -15,7 +15,15 @@ public class WorkoutVO {
     private Long id;
     private String name;
     private Long totalDuration;
+    private UserVO user;
     private List<ExerciseVO> exercises;
+
+    public WorkoutVO(Long id, String name, Long totalDuration, List<ExerciseVO> exercises) {
+        this.id = id;
+        this.name = name;
+        this.totalDuration = totalDuration;
+        this.exercises = exercises;
+    }
 
     @Override
     public String toString() {

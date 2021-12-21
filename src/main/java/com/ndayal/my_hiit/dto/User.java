@@ -26,9 +26,6 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @OneToMany(mappedBy = "user")
-    private List<Workout> workouts;
-
     @Override
     public String toString() {
         return "User{" +

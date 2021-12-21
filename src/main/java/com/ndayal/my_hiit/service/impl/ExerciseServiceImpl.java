@@ -2,6 +2,7 @@ package com.ndayal.my_hiit.service.impl;
 
 import com.ndayal.my_hiit.dao.ExerciseRepository;
 import com.ndayal.my_hiit.dto.Exercise;
+import com.ndayal.my_hiit.vo.ExerciseListVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,11 @@ public class ExerciseServiceImpl implements com.ndayal.my_hiit.service.ExerciseS
     ExerciseRepository exerciseRepository;
 
     @Override
-    public List<Exercise> getAllExercises() {
-        return exerciseRepository.findAllByOrderByNameAsc();
+    public ExerciseListVO getAllExercises() {
+        List<Exercise> exerciseList= exerciseRepository.findAllByOrderByNameAsc();
+
+        ExerciseListVO exerciseListVO = new ExerciseListVO(exerciseList);
+
+        return exerciseListVO;
     }
 }

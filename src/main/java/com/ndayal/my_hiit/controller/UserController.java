@@ -2,6 +2,7 @@ package com.ndayal.my_hiit.controller;
 
 import com.ndayal.my_hiit.dto.User;
 import com.ndayal.my_hiit.service.UserService;
+import com.ndayal.my_hiit.vo.UserListVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +23,7 @@ public class UserController {
     }
 
     @GetMapping("/users")
-    public ResponseEntity<List<User>> getUsers() {
-        return ResponseEntity.ok(userService.getAllUsers());
+    public ResponseEntity<UserListVO> getUser(@RequestParam(value = "email", required = false) String email) {
+        return ResponseEntity.ok(userService.getUser(email));
     }
 }

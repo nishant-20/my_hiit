@@ -21,16 +21,16 @@ public class Workout {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "description")
+    private String description;
+
     @ManyToOne()
     @JoinColumn(name = "user_id")
     private User user;
 
-    @Column(name = "description")
-    private String description;
-
-    public Workout(Long id, String name, String description) {
-        this.id = id;
+    public Workout(String name, User user, String description) {
         this.name = name;
+        this.user = user;
         this.description = description;
     }
 
