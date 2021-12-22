@@ -25,8 +25,9 @@ public class MyHiitApplication {
 						.allowedOrigins("http://localhost:3000")
 						.allowedMethods("GET");
 
-				registry.addMapping("/v1/workouts*")
-						.allowedOrigins("http://localhost:3000");
+				registry.addMapping("/v1/workouts/**")
+						.allowedOrigins("http://localhost:3000")
+						.allowedMethods("GET", "POST", "PUT", "DELETE");
 
 				registry.addMapping("/v1/users")
 						.allowedOrigins("http://localhost:3000")
