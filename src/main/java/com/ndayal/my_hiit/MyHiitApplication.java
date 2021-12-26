@@ -22,15 +22,15 @@ public class MyHiitApplication {
 			public void addCorsMappings(CorsRegistry registry) {
 
 				registry.addMapping("/v1/exercises")
-						.allowedOrigins("http://localhost:3000")
+						.allowedOrigins("http://localhost:3000", "https://nishant-20.github.io")
 						.allowedMethods("GET");
 
 				registry.addMapping("/v1/workouts/**")
-						.allowedOrigins("http://localhost:3000")
+						.allowedOrigins("http://localhost:3000", "https://nishant-20.github.io")
 						.allowedMethods("GET", "POST", "PUT", "DELETE");
 
 				registry.addMapping("/v1/users")
-						.allowedOrigins("http://localhost:3000")
+						.allowedOrigins("http://localhost:3000", "https://nishant-20.github.io")
 						.allowedMethods("GET");
 			}
 		};
