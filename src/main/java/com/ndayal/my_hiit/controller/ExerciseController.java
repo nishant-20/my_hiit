@@ -18,7 +18,7 @@ public class ExerciseController {
     @Autowired
     ExerciseService exerciseService;
 
-    @GetMapping(value = "/exercises", produces = {"application/json"})
+    @GetMapping(value = "/exercise", produces = {"application/json"})
     public ResponseEntity<ExerciseListVO> getExercises() {
         return ResponseEntity.ok(exerciseService.getAllExercises());
     }
