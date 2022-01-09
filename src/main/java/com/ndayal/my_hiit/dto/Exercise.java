@@ -8,12 +8,11 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "exercises")
+@Table(name = "EXERCISE")
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Exercise {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
